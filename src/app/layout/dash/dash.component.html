@@ -1,0 +1,24 @@
+<div class="main">
+  <mat-toolbar class="main-toolbar">
+    <button type="button" mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="title">Rosendous | Sistema de inscripciones y registros</span>
+
+    <button mat-icon-button class="logout-icon" aria-label="Logout" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-drawer-container class="main-container" autosize>
+    <mat-drawer #drawer class="main-sidenav" mode="side">
+      <mat-nav-list>
+        <a routerLink="students" routerLinkActive #students="routerLinkActive" [activated]="students.isActive" mat-list-item>Students</a>
+        <a routerLink="courses" routerLinkActive #courses="routerLinkActive" [activated]="courses.isActive" mat-list-item>Courses</a>
+        <a routerLink="inscriptions" routerLinkActive #insc="routerLinkActive" [activated]="insc.isActive" mat-list-item>Inscriptions</a>
+      </mat-nav-list>
+    </mat-drawer>
+    <div class="main-sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-container>
+</div>

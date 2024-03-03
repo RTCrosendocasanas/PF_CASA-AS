@@ -1,0 +1,9 @@
+<div class="main">
+  <app-student-form [studentToEdit]="student" (onSubmitForm)="onSubmitForm($event)"></app-student-form>
+  <app-array-table
+    [data]="dataSource"
+    [columns]="tableColumns"
+    (onDelete)="onStudentDelete($event)"
+    (onEdit)="onStudentEdit($event)"
+  ></app-array-table>
+</div>

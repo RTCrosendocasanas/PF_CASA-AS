@@ -1,0 +1,8 @@
+<div class="main">
+  <div class="form-container">
+    <app-inscriptions-form [inscriptionToEdit]="inscription" (onSubmitForm)="onSubmitForm($event)"></app-inscriptions-form>
+  </div>
+  <div class="table-container">
+    <app-array-table [data]="dataSource" [columns]="tableColumns" (onDelete)="onCourseDelete($event)" (onEdit)="onCourseEdit($event)"></app-array-table>
+  </div>
+</div>
